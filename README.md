@@ -1,7 +1,7 @@
 # 🌟 MY PAGE APP PROJECT 🌟
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.19-blue?style=for-the-badge&logo=flutter)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.3-blue?style=for-the-badge&logo=dart)](https://dart.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-3.27-blue?style=for-the-badge&logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.6-blue?style=for-the-badge&logo=dart)](https://dart.dev)
 [![Web](https://img.shields.io/badge/Platform-Web-important?style=for-the-badge)](https://flutter.dev/web)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
