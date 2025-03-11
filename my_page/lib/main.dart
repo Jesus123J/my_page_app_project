@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_page/features/about/dashboard.dart';
-
+import 'package:get/get.dart';
+import 'package:my_page/core/app_pages.dart';
+import 'package:my_page/core/app_routes.dart';
+import 'package:my_page/features/about/ui/not_found.dart';
 void main() {
+
   runApp( MyApp());
 }
 
@@ -9,126 +12,20 @@ class MyApp extends StatelessWidget {
 
 
 
-   @override
+  @override
   Widget build(BuildContext context) {
-     return MaterialApp(
-       debugShowCheckedModeBanner: false,
+     return GetMaterialApp(
+        title: "My page",
 
-       home: Scaffold(
-           appBar: AppBar(
-             backgroundColor: Colors.deepOrangeAccent,
-             title: Text("my_page"),
-             actions: [
-                TextButton(onPressed: () => {}, child: Text("data"))
-             ],
-           ),
-           drawer: Drawer(
-              child: ListView(
-                 children: [
-                   DrawerHeader(
-                     decoration: BoxDecoration(color: Colors.blue),
-                     child: Text('Encabezado del Drawer'),
-                   ),
-                   ListTile(
-                     title: Text('Opción 1'),
-                     onTap: () {},
-                   ),
-                   ListTile(
-                     title: Text('Opción 2'),
-                     onTap: () {},
-                   ),
-                 ],
-              ),
-           ),
-           body: Stack(
-              children: [
-                Row(
-                  children: [
-                    Expanded(child: Container( color: Colors.amber,)),
-                    Expanded(child: Container(color: Colors.black),)],
-                ),
-                Positioned( left: 100, right:50 , top: 50, bottom: 50, child: Container(
-                    width: 500,
-                    height: 500,
-                    decoration: BoxDecoration(
-                        color: Colors.deepOrangeAccent,
-                       borderRadius: BorderRadius.circular(25)
-                    ),
-                    child: Padding(padding: EdgeInsetsDirectional.symmetric(vertical: 15 , horizontal: 15),
-                     child: ListView(
-                        children: [
-                      Container(
-                      width: 50,
-                      height: 50 , color: Colors.white,),
-
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,),
-                          Container(
-                            width: 50,
-                            height: 50 , color: Colors.white,)
-
-                        ],
-                     ))
-                    ),
-                )
-              ],
-           )
-       )
+        initialRoute: App_Routes.home,
+        getPages: App_Pages.pages ,
+       defaultTransition: Transition.noTransition, // Opcional, evita animaciones raras
+       transitionDuration: Duration.zero, // Evita animaciones entre rutas
+       routingCallback: (routing) {
+         if (routing?.current == null) return;
+         print("Ruta actual: ${routing!.current}");
+       },
+        unknownRoute:  GetPage(name: "/not-found", page: () => NotFoundPage()),
      );
   }
 }
