@@ -7,7 +7,7 @@ import 'package:my_page/features/about/ui/dashboard_page.dart';
 abstract class App_Pages {
 
   static final List<GetPage> pages = [
-
+    // GetPage(name: , page: () =>  ),
       GetPage(
           name: App_Routes.home,
           page: () =>  DashboardPage(),

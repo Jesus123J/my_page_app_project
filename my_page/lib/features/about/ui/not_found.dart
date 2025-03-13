@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:my_page/core/app_routes.dart';
 
 class NotFoundPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
